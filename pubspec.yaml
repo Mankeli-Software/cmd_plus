@@ -1,0 +1,14 @@
+name: cli
+description: A wrapper around dart:io Process to make it easier to run commands in dart scripts.
+version: 1.0.1
+homepage: https://mankeli.co
+repository: https://github.com/Mankeli-Software/cli
+issue_tracker: https://github.com/Mankeli-Software/cli
+
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dev_dependencies:
+  dart_code_metrics: any
+  mankeli_analysis: ^1.1.0
