@@ -1,4 +1,4 @@
-# cli
+# cmd_plus
 
 [![style: mankeli analysis][mankeli_analysis_badge]][mankeli_analysis_badge_link]
 
@@ -28,9 +28,9 @@ This package is a wrapper around dart:io process runner. It makes error handling
 
 [license_badge]: https://img.shields.io/badge/license-BSD%203--clause-blue.svg
 [license_badge_link]: https://opensource.org/licenses/BSD-3-Clause
-[analysis_and_test]: https://github.com/Mankeli-Software/cli/actions/workflows/flutter.yml/badge.svg
-[cli_link]: https://pub.dev/packages/cli
-[pub_badge]: https://img.shields.io/pub/v/cli.svg
-[pub_badge_link]: https://pub.dev/packages/cli
+[analysis_and_test]: https://github.com/Mankeli-Software/cmd_plus/actions/workflows/flutter.yml/badge.svg
+[cmd_plus_link]: https://pub.dev/packages/cmd_plus
+[pub_badge]: https://img.shields.io/pub/v/cmd_plus.svg
+[pub_badge_link]: https://pub.dev/packages/cmd_plus
 
 

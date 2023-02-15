@@ -1,18 +1,18 @@
 import 'dart:io';
 
 /// {@template cli}
-/// [CLI] is a class that provides a simple interface to run processes on the command
+/// [CmdPlus] is a class that provides a simple interface to run processes on the command
 /// line. It is a wrapper around the [Process] class, making it easier to
 /// log errors and process results.
 /// {@endtemplate}
-class CLI {
+class CmdPlus {
   /// {@template cli_run}
   /// {@macro cli}
   ///
   ///
   ///
   ///
-  /// [CLI.run] starts a process and runs it non-interactively to completion.
+  /// [CmdPlus.run] starts a process and runs it non-interactively to completion.
   /// The process run [cmd] with the specified [args].
   ///
   /// Use [onOutput] to specify a callback that will be called with the output

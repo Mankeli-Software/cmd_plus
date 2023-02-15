@@ -1,9 +1,9 @@
-name: cli
+name: cmd_plus
 description: A wrapper around dart:io Process to make it easier to run commands in dart scripts.
 version: 1.0.1
 homepage: https://mankeli.co
-repository: https://github.com/Mankeli-Software/cli
-issue_tracker: https://github.com/Mankeli-Software/cli
+repository: https://github.com/Mankeli-Software/cli_plus
+issue_tracker: https://github.com/Mankeli-Software/cli_plus
 
 
 environment:
