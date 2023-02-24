@@ -6,6 +6,9 @@ import 'dart:io';
 /// log errors and process results.
 /// {@endtemplate}
 class CmdPlus {
+  /// Default private constructor to avoid confusing user.
+  const CmdPlus._();
+
   /// {@template cli_run}
   /// {@macro cli}
   ///
