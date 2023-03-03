@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+        options:
+          build_extensions: { '.dart': '.gen.dart' }
+          required_inputs: ['.gen.dart']

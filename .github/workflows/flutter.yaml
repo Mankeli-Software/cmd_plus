@@ -28,3 +28,9 @@ jobs:
         
       - name: Test code
         run: flutter test . --no-pub
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Formats code
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
