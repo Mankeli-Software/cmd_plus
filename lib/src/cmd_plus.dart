@@ -10,13 +10,13 @@ import 'package:io/io.dart' hide ExitCode;
 import 'package:mason_logger/mason_logger.dart';
 import 'package:path/path.dart' as path;
 
-/// {@template cli}
+/// {@template cmd_plus}
 /// [CmdPlus] is a class that provides a simple methods to run processes on the command
 /// line. It is a wrapper around the [Process] class, making it easier to
 /// log errors and process results with package:mason_logger.
 /// {@endtemplate}
 class CmdPlus {
-  /// {@macro cli}
+  /// {@macro cmd_plus}
   CmdPlus({
     Logger? logger,
     ProcessManager? manager,
@@ -41,11 +41,11 @@ class CmdPlus {
     await sharedStdIn.terminate();
   }
 
-  /// {@template copy_files}
-  /// {@macro cli}
+  /// {@template copy_directory}
+  /// {@macro cmd_plus}
   ///
   ///
-  /// [copy] copies the files from the directory [from]
+  /// [copyDirectory] copies the files from the directory [from]
   /// to the directory [to].
   ///
   /// [filters] can be specified to ignore certain files and folders,
@@ -54,25 +54,28 @@ class CmdPlus {
   /// IMPORTANT: This method will wipe the contents of the [to] directory
   /// completely before copying the files.
   /// {@endtemplate}
-  Future<void> copy({
+  Future<void> copyDirectory({
     required Directory from,
     required Directory to,
-    List<CopyFilter> filters = const [],
+    List<DirectoryCopyFilter> filters = const [],
+    bool enableLogging = true,
   }) async {
-    final copyProgress =
-        logger.progress('Copying files from ${from.path} to ${to.path}');
+    final copyProgress = enableLogging
+        ? logger.progress('Copying files from ${from.path} to ${to.path}')
+        : null;
     await to.recreate();
 
-    final ignorePaths = filters.whereType<IgnorePathsCopyFilter>().toList();
+    final ignorePaths =
+        filters.whereType<IgnorePathsDirectoryCopyFilter>().toList();
 
     final replaceInFolderNames =
-        filters.whereType<ReplaceInFolderNamesCopyFilter>().toList();
+        filters.whereType<ReplaceInFolderNamesDirectoryCopyFilter>().toList();
 
     final replaceInFileNames =
-        filters.whereType<ReplaceInFileNamesCopyFilter>().toList();
+        filters.whereType<ReplaceInFileNamesDirectoryCopyFilter>().toList();
 
     final replaceInFileContent =
-        filters.whereType<ReplaceInFileContentCopyFilter>().toList();
+        filters.whereType<ReplaceInFileContentDirectoryCopyFilter>().toList();
 
     await Future.wait(
       from.listSync(recursive: true).whereType<File>().map(
@@ -127,32 +130,67 @@ class CmdPlus {
             ),
           );
 
-          final destination = await File(filteredPath).create(
-            recursive: true,
+          await copyFile(
+            from: originalFile,
+            to: File(filteredPath),
+            filters: contentFilters
+                .map(
+                  (f) => FileCopyFilter.replaceInFileContent(
+                    from: f.from,
+                    replace: f.replace,
+                  ),
+                )
+                .toList(),
+            enableLogging: false,
           );
-
-          if (contentFilters.isEmpty) {
-            await originalFile.copy(destination.path);
-          } else {
-            final content = await originalFile.readAsString();
-            final filteredContent = contentFilters.fold<String>(
-              content,
-              (previousValue, filter) => previousValue.replaceAll(
-                filter.from,
-                filter.replace,
-              ),
-            );
-            await destination.writeAsString(filteredContent);
-          }
         },
       ),
     );
 
-    copyProgress.complete();
+    copyProgress?.complete();
+  }
+
+  /// {@template copy_file}
+  /// {@macro cmd_plus}
+  ///
+  ///
+  /// [copyFile] copies the file [from] to the file [to], while applying
+  /// the given [FileCopyFilter]s.
+  ///
+  /// IMPORTANT: this method will overwrite the contents of [to] if it already
+  /// already exists.
+  Future<void> copyFile({
+    required File from,
+    required File to,
+    List<FileCopyFilter> filters = const [],
+    bool enableLogging = true,
+  }) async {
+    final progress = enableLogging
+        ? logger.progress('Copying file from ${from.path} to ${to.path}')
+        : null;
+    if (to.existsSync()) {
+      await to.delete();
+    }
+    await to.create(recursive: true);
+    if (filters.isEmpty) {
+      await from.copy(to.absolute.path);
+    } else {
+      final content = await from.readAsString();
+      final filteredContent = filters.fold<String>(
+        content,
+        (previousValue, filter) => previousValue.replaceAll(
+          filter.from,
+          filter.replace,
+        ),
+      );
+      await to.writeAsString(filteredContent);
+    }
+
+    progress?.complete();
   }
 
   /// {@template start}
-  /// {@macro cli}
+  /// {@macro cmd_plus}
   ///
   ///
   /// [start] starts a process running the [cmd] with the specified
@@ -260,7 +298,7 @@ class CmdPlus {
   }
 
   /// {@template run}
-  /// {@macro cli}
+  /// {@macro cmd_plus}
   ///
   ///
   /// [run] starts a process and runs it non-interactively to completion.

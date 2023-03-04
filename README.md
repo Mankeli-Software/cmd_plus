@@ -1,18 +1,18 @@
 # cmd_plus
 
-[![style: mankeli analysis][mankeli_analysis_badge]][mankeli_analysis_badge_link]
+[![style: mankeli analysis][1]][2]
 
-[![pub package][pub_badge]][pub_badge_link]
+[![pub package][3]][4]
 
-[![License][license_badge]][license_badge_link]
-![analysis & test][analysis_and_test]
-
-
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mankeli)
+[![License][5]][6]
+![[CI]][7]
 
 
-This package is a wrapper around dart:io process runner. It makes error handling and logging syntax a lot shorter.
+
+[!["Buy Me A Coffee"][8]][9]
+
+
+This package is a wrapper around dart:io Process, package:io and package:mason_logger. It makes makes it easier to run CLI ocmmands, copy files and folders and much more!
 
 ## Platform support
 | Android | iOS | Web   | macOS | Linux | Windows |
@@ -22,15 +22,15 @@ This package is a wrapper around dart:io process runner. It makes error handling
 
 
 
-[mankeli_analysis_badge]: https://img.shields.io/badge/style-mankeli__analysis-blue
-[mankeli_analysis_badge_link]: https://pub.dev/packages/mankeli_analysis
+[1]: https://img.shields.io/badge/style-mankeli__analysis-blue
+[2]: https://pub.dev/packages/mankeli_analysis
+[3]: https://img.shields.io/pub/v/cmd_plus.svg
+[4]: https://pub.dev/packages/cmd_plus
+[5]: https://img.shields.io/badge/license-BSD%203--clause-blue.svg
+[6]: https://opensource.org/licenses/BSD-3-Clause
+[7]: https://github.com/Mankeli-Software/cmd_plus/actions/workflows/flutter.yaml/badge.svg
+[8]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
+[9]: https://www.buymeacoffee.com/mankeli
 
-
-[license_badge]: https://img.shields.io/badge/license-BSD%203--clause-blue.svg
-[license_badge_link]: https://opensource.org/licenses/BSD-3-Clause
-[analysis_and_test]: https://github.com/Mankeli-Software/cmd_plus/actions/workflows/flutter.yml/badge.svg
-[cmd_plus_link]: https://pub.dev/packages/cmd_plus
-[pub_badge]: https://img.shields.io/pub/v/cmd_plus.svg
-[pub_badge_link]: https://pub.dev/packages/cmd_plus
 
 
