@@ -1,5 +1,5 @@
 
-name: publish 
+name: '[CD]' 
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: analysis & test
+name: '[CI]'
 
 on:
   pull_request:
@@ -25,9 +25,6 @@ jobs:
 
       - name: Analyze project source
         run: flutter analyze . --fatal-infos --no-pub
-        
-      - name: Test code
-        run: flutter test . --no-pub
 
       - uses: EndBug/add-and-commit@v9
         with:

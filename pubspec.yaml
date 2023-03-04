@@ -19,7 +19,5 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.3.3
   dart_code_metrics: any
-  flutter_test:
-    sdk: flutter
   mankeli_analysis: ^1.1.0
   mocktail: ^0.3.0
