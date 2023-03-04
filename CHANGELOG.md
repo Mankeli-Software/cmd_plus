@@ -1,3 +1,6 @@
+# 1.2.2
+- Won't terminate `sharedStdIn` if `ProcessManager` is not used.
+
 # 1.2.1
 - Won't create `ProcessManager` when not provided as parameter, until it is actually required. This shall fix all the issues when using `CmdPlus().run()` in `mason` hooks.
 

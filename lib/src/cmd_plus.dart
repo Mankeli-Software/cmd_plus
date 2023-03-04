@@ -37,7 +37,9 @@ class CmdPlus {
 
   /// Frees up resources associated with this class.
   Future<void> close() async {
-    await sharedStdIn.terminate();
+    if (manager != null) {
+      await sharedStdIn.terminate();
+    }
   }
 
   /// {@template copy_directory}
