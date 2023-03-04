@@ -19,9 +19,8 @@ class CmdPlus {
   /// {@macro cmd_plus}
   CmdPlus({
     Logger? logger,
-    ProcessManager? manager,
-  })  : manager = manager ?? ProcessManager(),
-        logger = logger ??
+    this.manager,
+  }) : logger = logger ??
             Logger(
               progressOptions: const ProgressOptions(
                 animation: ProgressAnimation(
@@ -34,7 +33,7 @@ class CmdPlus {
   final Logger logger;
 
   /// The manager for the process.
-  final ProcessManager manager;
+  ProcessManager? manager;
 
   /// Frees up resources associated with this class.
   Future<void> close() async {
@@ -233,10 +232,11 @@ class CmdPlus {
     Map<String, String>? environment,
     CmdPlusMode mode = const CmdPlusMode.normal(),
   }) async {
+    manager ??= ProcessManager();
     final process = await _overrideAnsiOutput(
       true,
       () => mode.when(
-        normal: () => manager.spawn(
+        normal: () => manager!.spawn(
           cmd,
           args,
           workingDirectory: workingDirectory,
@@ -244,7 +244,7 @@ class CmdPlus {
           environment: environment,
           includeParentEnvironment: includeParentEnvironment,
         ),
-        background: () => manager.spawnBackground(
+        background: () => manager!.spawnBackground(
           cmd,
           args,
           workingDirectory: workingDirectory,
@@ -252,7 +252,7 @@ class CmdPlus {
           environment: environment,
           includeParentEnvironment: includeParentEnvironment,
         ),
-        detached: () => manager.spawnDetached(
+        detached: () => manager!.spawnDetached(
           cmd,
           args,
           workingDirectory: workingDirectory,

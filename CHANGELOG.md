@@ -1,3 +1,6 @@
+# 1.2.1
+- Won't create `ProcessManager` when not provided as parameter, until it is actually required. This shall fix all the issues when using `CmdPlus().run()` in `mason` hooks.
+
 # 1.2.0
 
 - __BREAKING CHANGE__: Splits `copy` into two functions, `copyDirectory` and `copyFile`.
