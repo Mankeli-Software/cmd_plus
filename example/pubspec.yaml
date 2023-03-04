@@ -1,0 +1,10 @@
+name: example
+publish_to: 'none'
+description: An example for the cmd_plus package.
+
+environment:
+  sdk: ">=2.18.4 <3.0.0"
+
+dependencies:
+  cmd_plus:
+    path: ../

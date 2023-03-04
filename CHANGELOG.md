@@ -1,3 +1,10 @@
+# 1.2.0
+
+- __BREAKING CHANGE__: Splits `copy` into two functions, `copyDirectory` and `copyFile`.
+- __BREAKING CHANGE__: Renames `CopyFilter` to `DirectoryCopyFilter`
+- Creates a new `FileCopyFilter`
+- Exports internally used extension methods on `Directory` and `File`
+
 # 1.1.0 
 - __BREAKING CHANGE__: CmdPlus functions are no longer static. 
 - Adds functions equivalent to `Process.run` and `Process.start`, when previously there was only a function somewhat equivalent to `Process.run`.
