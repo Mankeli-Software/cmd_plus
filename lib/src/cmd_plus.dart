@@ -333,9 +333,9 @@ class CmdPlus {
     await Future.wait(
       directory.listSync(recursive: true).whereType<Directory>().map(
         (dir) async {
-          if (dir.listSync(recursive: true).whereType<File>().isEmpty) {
+          if (dir.listSync().whereType<File>().isEmpty) {
             if (dir.existsSync()) {
-              dir.deleteSync(recursive: true);
+              dir.deleteSync();
             }
           }
         },
