@@ -341,8 +341,8 @@ class CmdPlus {
 
     for (final dir in directories) {
       if (!dir.existsSync()) continue;
-      if (dir.listSync().whereType<File>().isEmpty) {
-        dir.deleteSync();
+      if (dir.listSync(recursive: true).whereType<File>().isEmpty) {
+        dir.deleteSync(recursive: true);
       }
     }
 
