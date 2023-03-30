@@ -171,15 +171,16 @@ class CmdPlus {
     final progress = enableLogging
         ? logger.progress('Copying file from ${from.path} to ${to.path}')
         : null;
-    var exists = false;
-    if (deleteTo && (exists = to.existsSync())) {
+
+    var exists = to.existsSync();
+    if (deleteTo && exists) {
       to.deleteSync();
+      exists = false;
     }
 
     if (!exists) {
       to.createSync(
         recursive: true,
-        exclusive: !deleteTo,
       );
     }
 
