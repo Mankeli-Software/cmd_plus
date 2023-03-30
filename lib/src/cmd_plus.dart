@@ -330,17 +330,21 @@ class CmdPlus {
         ? logger.progress('Deleting empty directories in ${directory.path}')
         : null;
 
-    await Future.wait(
-      directory.listSync(recursive: true).whereType<Directory>().map(
-        (dir) async {
-          if (dir.listSync().whereType<File>().isEmpty) {
-            if (dir.existsSync()) {
-              dir.deleteSync();
-            }
-          }
-        },
-      ),
-    );
+    final directories =
+        directory.listSync(recursive: true).whereType<Directory>().toList()
+          ..sort((d1, d2) {
+            final d1Depth = d1.absolute.path.split(path.separator).length;
+            final d2Depth = d2.absolute.path.split(path.separator).length;
+
+            return d2Depth.compareTo(d1Depth);
+          });
+
+    for (final dir in directories) {
+      if (!dir.existsSync()) continue;
+      if (dir.listSync().whereType<File>().isEmpty) {
+        dir.deleteSync();
+      }
+    }
 
     deleteProgress?.complete();
   }
