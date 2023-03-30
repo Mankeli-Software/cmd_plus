@@ -1,3 +1,7 @@
+# 1.3.1
+- Renames `DirectoryCopyFilter` to `DirectoryFilter` and `FileCopyFilter` to `FileFilter`
+- Creates new method, `filterDirectory()` for applying the same great filtering logic to in-place-edits (no need to create tmp directories etc.)
+  
 # 1.2.2
 - Won't terminate `sharedStdIn` if `ProcessManager` is not used.
 

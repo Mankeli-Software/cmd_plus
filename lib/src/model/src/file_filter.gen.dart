@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'file_copy_filter.dart';
+part of 'file_filter.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FileCopyFilter {
+mixin _$FileFilter {
   Pattern get from => throw _privateConstructorUsedError;
   String get replace => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,42 +37,40 @@ mixin _$FileCopyFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ReplaceInFileContentFileCopyFilter value)
+    required TResult Function(ReplaceInFileContentFilter value)
         replaceInFileContent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ReplaceInFileContentFileCopyFilter value)?
-        replaceInFileContent,
+    TResult? Function(ReplaceInFileContentFilter value)? replaceInFileContent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ReplaceInFileContentFileCopyFilter value)?
-        replaceInFileContent,
+    TResult Function(ReplaceInFileContentFilter value)? replaceInFileContent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FileCopyFilterCopyWith<FileCopyFilter> get copyWith =>
+  $FileFilterCopyWith<FileFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FileCopyFilterCopyWith<$Res> {
-  factory $FileCopyFilterCopyWith(
-          FileCopyFilter value, $Res Function(FileCopyFilter) then) =
-      _$FileCopyFilterCopyWithImpl<$Res, FileCopyFilter>;
+abstract class $FileFilterCopyWith<$Res> {
+  factory $FileFilterCopyWith(
+          FileFilter value, $Res Function(FileFilter) then) =
+      _$FileFilterCopyWithImpl<$Res, FileFilter>;
   @useResult
   $Res call({Pattern from, String replace});
 }
 
 /// @nodoc
-class _$FileCopyFilterCopyWithImpl<$Res, $Val extends FileCopyFilter>
-    implements $FileCopyFilterCopyWith<$Res> {
-  _$FileCopyFilterCopyWithImpl(this._value, this._then);
+class _$FileFilterCopyWithImpl<$Res, $Val extends FileFilter>
+    implements $FileFilterCopyWith<$Res> {
+  _$FileFilterCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -99,25 +97,24 @@ class _$FileCopyFilterCopyWithImpl<$Res, $Val extends FileCopyFilter>
 }
 
 /// @nodoc
-abstract class _$$ReplaceInFileContentFileCopyFilterCopyWith<$Res>
-    implements $FileCopyFilterCopyWith<$Res> {
-  factory _$$ReplaceInFileContentFileCopyFilterCopyWith(
-          _$ReplaceInFileContentFileCopyFilter value,
-          $Res Function(_$ReplaceInFileContentFileCopyFilter) then) =
-      __$$ReplaceInFileContentFileCopyFilterCopyWithImpl<$Res>;
+abstract class _$$ReplaceInFileContentFilterCopyWith<$Res>
+    implements $FileFilterCopyWith<$Res> {
+  factory _$$ReplaceInFileContentFilterCopyWith(
+          _$ReplaceInFileContentFilter value,
+          $Res Function(_$ReplaceInFileContentFilter) then) =
+      __$$ReplaceInFileContentFilterCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Pattern from, String replace});
 }
 
 /// @nodoc
-class __$$ReplaceInFileContentFileCopyFilterCopyWithImpl<$Res>
-    extends _$FileCopyFilterCopyWithImpl<$Res,
-        _$ReplaceInFileContentFileCopyFilter>
-    implements _$$ReplaceInFileContentFileCopyFilterCopyWith<$Res> {
-  __$$ReplaceInFileContentFileCopyFilterCopyWithImpl(
-      _$ReplaceInFileContentFileCopyFilter _value,
-      $Res Function(_$ReplaceInFileContentFileCopyFilter) _then)
+class __$$ReplaceInFileContentFilterCopyWithImpl<$Res>
+    extends _$FileFilterCopyWithImpl<$Res, _$ReplaceInFileContentFilter>
+    implements _$$ReplaceInFileContentFilterCopyWith<$Res> {
+  __$$ReplaceInFileContentFilterCopyWithImpl(
+      _$ReplaceInFileContentFilter _value,
+      $Res Function(_$ReplaceInFileContentFilter) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +123,7 @@ class __$$ReplaceInFileContentFileCopyFilterCopyWithImpl<$Res>
     Object? from = null,
     Object? replace = null,
   }) {
-    return _then(_$ReplaceInFileContentFileCopyFilter(
+    return _then(_$ReplaceInFileContentFilter(
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -141,9 +138,8 @@ class __$$ReplaceInFileContentFileCopyFilterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReplaceInFileContentFileCopyFilter
-    implements ReplaceInFileContentFileCopyFilter {
-  const _$ReplaceInFileContentFileCopyFilter(
+class _$ReplaceInFileContentFilter implements ReplaceInFileContentFilter {
+  const _$ReplaceInFileContentFilter(
       {required this.from, required this.replace});
 
   @override
@@ -153,14 +149,14 @@ class _$ReplaceInFileContentFileCopyFilter
 
   @override
   String toString() {
-    return 'FileCopyFilter.replaceInFileContent(from: $from, replace: $replace)';
+    return 'FileFilter.replaceInFileContent(from: $from, replace: $replace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReplaceInFileContentFileCopyFilter &&
+            other is _$ReplaceInFileContentFilter &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.replace, replace) || other.replace == replace));
   }
@@ -171,10 +167,9 @@ class _$ReplaceInFileContentFileCopyFilter
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReplaceInFileContentFileCopyFilterCopyWith<
-          _$ReplaceInFileContentFileCopyFilter>
-      get copyWith => __$$ReplaceInFileContentFileCopyFilterCopyWithImpl<
-          _$ReplaceInFileContentFileCopyFilter>(this, _$identity);
+  _$$ReplaceInFileContentFilterCopyWith<_$ReplaceInFileContentFilter>
+      get copyWith => __$$ReplaceInFileContentFilterCopyWithImpl<
+          _$ReplaceInFileContentFilter>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -208,7 +203,7 @@ class _$ReplaceInFileContentFileCopyFilter
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ReplaceInFileContentFileCopyFilter value)
+    required TResult Function(ReplaceInFileContentFilter value)
         replaceInFileContent,
   }) {
     return replaceInFileContent(this);
@@ -217,8 +212,7 @@ class _$ReplaceInFileContentFileCopyFilter
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ReplaceInFileContentFileCopyFilter value)?
-        replaceInFileContent,
+    TResult? Function(ReplaceInFileContentFilter value)? replaceInFileContent,
   }) {
     return replaceInFileContent?.call(this);
   }
@@ -226,8 +220,7 @@ class _$ReplaceInFileContentFileCopyFilter
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ReplaceInFileContentFileCopyFilter value)?
-        replaceInFileContent,
+    TResult Function(ReplaceInFileContentFilter value)? replaceInFileContent,
     required TResult orElse(),
   }) {
     if (replaceInFileContent != null) {
@@ -237,10 +230,10 @@ class _$ReplaceInFileContentFileCopyFilter
   }
 }
 
-abstract class ReplaceInFileContentFileCopyFilter implements FileCopyFilter {
-  const factory ReplaceInFileContentFileCopyFilter(
+abstract class ReplaceInFileContentFilter implements FileFilter {
+  const factory ReplaceInFileContentFilter(
       {required final Pattern from,
-      required final String replace}) = _$ReplaceInFileContentFileCopyFilter;
+      required final String replace}) = _$ReplaceInFileContentFilter;
 
   @override
   Pattern get from;
@@ -248,7 +241,6 @@ abstract class ReplaceInFileContentFileCopyFilter implements FileCopyFilter {
   String get replace;
   @override
   @JsonKey(ignore: true)
-  _$$ReplaceInFileContentFileCopyFilterCopyWith<
-          _$ReplaceInFileContentFileCopyFilter>
+  _$$ReplaceInFileContentFilterCopyWith<_$ReplaceInFileContentFilter>
       get copyWith => throw _privateConstructorUsedError;
 }

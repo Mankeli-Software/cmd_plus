@@ -3,7 +3,7 @@ name: '[CD]'
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@main # required!
         
-      - name: 'qr_plus'
+      - name: 'cmd_plus'
         uses: k-paxian/dart-package-publisher@master
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIAL }}
