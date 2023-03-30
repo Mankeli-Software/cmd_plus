@@ -315,6 +315,34 @@ class CmdPlus {
     filterProgress?.complete();
   }
 
+  /// {@template delete_empty_directories}
+  /// {@macro cmd_plus}
+  ///
+  /// [deleteEmptyDirectories] deletes all empty directories within the given
+  /// [directory].
+  ///
+  /// {@endtemplate}
+  Future<void> deleteEmptyDirectories({
+    required Directory directory,
+    bool enableLogging = true,
+  }) async {
+    final deleteProgress = enableLogging
+        ? logger.progress('Deleting empty directories in ${directory.path}')
+        : null;
+
+    await Future.wait(
+      directory.listSync(recursive: true).whereType<Directory>().map(
+        (dir) async {
+          if (dir.listSync().isEmpty) {
+            dir.deleteSync();
+          }
+        },
+      ),
+    );
+
+    deleteProgress?.complete();
+  }
+
   /// {@template start}
   /// {@macro cmd_plus}
   ///
