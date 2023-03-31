@@ -1,5 +1,5 @@
 # 1.3.1
-- Renames `DirectoryCopyFilter` to `DirectoryFilter` and `FileCopyFilter` to `FileFilter`
+- __BREAKING CHANGE__:Renames `DirectoryCopyFilter` to `DirectoryFilter` and `FileCopyFilter` to `FileFilter`
 - Creates new method, `filterDirectory()`, for applying the same great filtering logic to in-place-edits (no need to create tmp directories etc.)
 - Creates new method, `deleteEmptyDirectories()`, for deleting all of the empty subdirectories within a directory
   
