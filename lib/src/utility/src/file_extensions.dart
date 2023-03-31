@@ -10,6 +10,6 @@ extension FileExtensions on File {
   ///
   /// [relativePath] returns the relative path from [dir] to this file.
   String relativePath(Directory dir) {
-    return path.relative(this.path, from: dir.path);
+    return path.relative(absolute.path, from: dir.absolute.path);
   }
 }

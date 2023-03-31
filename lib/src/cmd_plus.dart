@@ -58,7 +58,7 @@ class CmdPlus {
   Future<void> copyDirectory({
     required Directory from,
     required Directory to,
-    List<DirectoryCopyFilter> filters = const [],
+    List<DirectoryFilter> filters = const [],
     bool enableLogging = true,
   }) async {
     final copyProgress = enableLogging
@@ -67,16 +67,16 @@ class CmdPlus {
     await to.recreate();
 
     final ignorePaths =
-        filters.whereType<IgnorePathsDirectoryCopyFilter>().toList();
+        filters.whereType<IgnorePathsDirectoryFilter>().toList();
 
     final replaceInFolderNames =
-        filters.whereType<ReplaceInFolderNamesDirectoryCopyFilter>().toList();
+        filters.whereType<ReplaceInFolderNamesDirectoryFilter>().toList();
 
     final replaceInFileNames =
-        filters.whereType<ReplaceInFileNamesDirectoryCopyFilter>().toList();
+        filters.whereType<ReplaceInFileNamesDirectoryFilter>().toList();
 
     final replaceInFileContent =
-        filters.whereType<ReplaceInFileContentDirectoryCopyFilter>().toList();
+        filters.whereType<ReplaceInFileContentDirectoryFilter>().toList();
 
     await Future.wait(
       from.listSync(recursive: true).whereType<File>().map(
@@ -131,18 +131,18 @@ class CmdPlus {
             ),
           );
 
-          await copyFile(
+          copyFile(
             from: originalFile,
             to: File(filteredPath),
             filters: contentFilters
                 .map(
-                  (f) => FileCopyFilter.replaceInFileContent(
+                  (f) => FileFilter.replaceInFileContent(
                     from: f.from,
                     replace: f.replace,
                   ),
                 )
                 .toList(),
-            enableLogging: false,
+            enableLogging: enableLogging,
           );
         },
       ),
@@ -156,27 +156,38 @@ class CmdPlus {
   ///
   ///
   /// [copyFile] copies the file [from] to the file [to], while applying
-  /// the given [FileCopyFilter]s.
+  /// the given [FileFilter]s.
   ///
   /// IMPORTANT: this method will overwrite the contents of [to] if it already
   /// already exists.
-  Future<void> copyFile({
+  void copyFile({
     required File from,
     required File to,
-    List<FileCopyFilter> filters = const [],
+    List<FileFilter> filters = const [],
     bool enableLogging = true,
-  }) async {
+    bool deleteFrom = false,
+    bool deleteTo = false,
+  }) {
     final progress = enableLogging
         ? logger.progress('Copying file from ${from.path} to ${to.path}')
         : null;
-    if (to.existsSync()) {
-      await to.delete();
+
+    var exists = to.existsSync();
+    if (deleteTo && exists) {
+      to.deleteSync();
+      exists = false;
     }
-    await to.create(recursive: true);
+
+    if (!exists) {
+      to.createSync(
+        recursive: true,
+      );
+    }
+
     if (filters.isEmpty) {
-      await from.copy(to.absolute.path);
+      from.copySync(to.absolute.path);
     } else {
-      final content = await from.readAsString();
+      final content = from.readAsStringSync();
       final filteredContent = filters.fold<String>(
         content,
         (previousValue, filter) => previousValue.replaceAll(
@@ -184,10 +195,159 @@ class CmdPlus {
           filter.replace,
         ),
       );
-      await to.writeAsString(filteredContent);
+      to.writeAsStringSync(filteredContent);
+    }
+
+    if (deleteFrom) {
+      from.deleteSync();
     }
 
     progress?.complete();
+  }
+
+  /// {@template filter_directory}
+  /// {@macro cmd_plus}
+  ///
+  ///
+  /// [filterDirectory] filters files and folders in the directory [directory].
+  ///
+  /// [filters] can be specified to ignore certain files and folders,
+  /// and to replace certain strings in the file or folder names and in content.
+  ///
+  /// IMPORTANT: This method will modify the contents of the [directory], so
+  /// use with caution.
+  /// {@endtemplate}
+  Future<void> filterDirectory({
+    required Directory directory,
+    List<DirectoryFilter> filters = const [],
+    bool enableLogging = true,
+  }) async {
+    final filterProgress = enableLogging
+        ? logger.progress('Filtering files in ${directory.path}')
+        : null;
+
+    final ignorePaths =
+        filters.whereType<IgnorePathsDirectoryFilter>().toList();
+
+    final replaceInFolderNames =
+        filters.whereType<ReplaceInFolderNamesDirectoryFilter>().toList();
+
+    final replaceInFileNames =
+        filters.whereType<ReplaceInFileNamesDirectoryFilter>().toList();
+
+    final replaceInFileContent =
+        filters.whereType<ReplaceInFileContentDirectoryFilter>().toList();
+
+    await Future.wait(
+      directory.listSync(recursive: true).whereType<File>().map(
+        (originalFile) async {
+          final relativePath = originalFile.relativePath(directory);
+
+          final shouldIgnore = ignorePaths.any(
+            (ignore) => ignore.paths.any(
+              (r) => r.hasMatch(relativePath),
+            ),
+          );
+
+          if (shouldIgnore) {
+            return originalFile.deleteSync();
+          }
+
+          final folderNameFilters = replaceInFolderNames.where(
+            (replace) => !replace.ignore.any(
+              (r) => r.hasMatch(relativePath),
+            ),
+          );
+
+          final filteredFolderName = folderNameFilters.fold<String>(
+            path.dirname(relativePath),
+            (previousValue, filter) => previousValue.replaceAll(
+              filter.from,
+              filter.replace,
+            ),
+          );
+
+          final fileNameFilters = replaceInFileNames.where(
+            (replace) => !replace.ignore.any(
+              (r) => r.hasMatch(relativePath),
+            ),
+          );
+
+          final filteredFileName = fileNameFilters.fold<String>(
+            path.basename(relativePath),
+            (previousValue, filter) => previousValue.replaceAll(
+              filter.from,
+              filter.replace,
+            ),
+          );
+
+          final filteredPath = path.join(
+            directory.absolute.path,
+            filteredFolderName,
+            filteredFileName,
+          );
+
+          final contentFilters = replaceInFileContent.where(
+            (replace) => !replace.ignore.any(
+              (r) => r.hasMatch(relativePath),
+            ),
+          );
+          final target = File(filteredPath);
+          final newRelativePath = target.relativePath(directory);
+          copyFile(
+            from: originalFile,
+            to: target,
+            deleteTo: relativePath != newRelativePath,
+            deleteFrom: relativePath != newRelativePath,
+            filters: contentFilters
+                .map(
+                  (f) => FileFilter.replaceInFileContent(
+                    from: f.from,
+                    replace: f.replace,
+                  ),
+                )
+                .toList(),
+            enableLogging: enableLogging,
+          );
+        },
+      ),
+    );
+
+    filterProgress?.complete();
+  }
+
+  /// {@template delete_empty_directories}
+  /// {@macro cmd_plus}
+  ///
+  /// [deleteEmptyDirectories] deletes all empty directories within the given
+  /// [directory].
+  ///
+  /// {@endtemplate}
+  Future<void> deleteEmptyDirectories({
+    required Directory directory,
+    bool enableLogging = true,
+  }) async {
+    final deleteProgress = enableLogging
+        ? logger.progress('Deleting empty directories in ${directory.path}')
+        : null;
+
+    final directories =
+        directory.listSync(recursive: true).whereType<Directory>().toList()
+          ..sort((d1, d2) {
+            final d1Depth = d1.absolute.path.split(path.separator).length;
+            final d2Depth = d2.absolute.path.split(path.separator).length;
+
+            return d2Depth.compareTo(d1Depth);
+          });
+
+    for (final dir in directories) {
+      if (!dir.existsSync()) continue;
+      if (dir.listSync(recursive: true).whereType<File>().isEmpty) {
+        dir.deleteSync(recursive: true);
+      }
+    }
+
+    deleteProgress?.complete();
   }
 
   /// {@template start}

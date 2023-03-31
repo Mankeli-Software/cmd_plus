@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'directory_copy_filter.dart';
+part of 'directory_filter.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$DirectoryCopyFilter {
+mixin _$DirectoryFilter {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<RegExp> paths) ignorePaths,
@@ -52,34 +52,34 @@ mixin _$DirectoryCopyFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(IgnorePathsDirectoryCopyFilter value) ignorePaths,
-    required TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)
+    required TResult Function(IgnorePathsDirectoryFilter value) ignorePaths,
+    required TResult Function(ReplaceInFolderNamesDirectoryFilter value)
         replaceInFolderNames,
-    required TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileNamesDirectoryFilter value)
         replaceInFileNames,
-    required TResult Function(ReplaceInFileContentDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileContentDirectoryFilter value)
         replaceInFileContent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult? Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult? Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult? Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult? Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult? Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
     required TResult orElse(),
   }) =>
@@ -87,16 +87,16 @@ mixin _$DirectoryCopyFilter {
 }
 
 /// @nodoc
-abstract class $DirectoryCopyFilterCopyWith<$Res> {
-  factory $DirectoryCopyFilterCopyWith(
-          DirectoryCopyFilter value, $Res Function(DirectoryCopyFilter) then) =
-      _$DirectoryCopyFilterCopyWithImpl<$Res, DirectoryCopyFilter>;
+abstract class $DirectoryFilterCopyWith<$Res> {
+  factory $DirectoryFilterCopyWith(
+          DirectoryFilter value, $Res Function(DirectoryFilter) then) =
+      _$DirectoryFilterCopyWithImpl<$Res, DirectoryFilter>;
 }
 
 /// @nodoc
-class _$DirectoryCopyFilterCopyWithImpl<$Res, $Val extends DirectoryCopyFilter>
-    implements $DirectoryCopyFilterCopyWith<$Res> {
-  _$DirectoryCopyFilterCopyWithImpl(this._value, this._then);
+class _$DirectoryFilterCopyWithImpl<$Res, $Val extends DirectoryFilter>
+    implements $DirectoryFilterCopyWith<$Res> {
+  _$DirectoryFilterCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -105,23 +105,22 @@ class _$DirectoryCopyFilterCopyWithImpl<$Res, $Val extends DirectoryCopyFilter>
 }
 
 /// @nodoc
-abstract class _$$IgnorePathsDirectoryCopyFilterCopyWith<$Res> {
-  factory _$$IgnorePathsDirectoryCopyFilterCopyWith(
-          _$IgnorePathsDirectoryCopyFilter value,
-          $Res Function(_$IgnorePathsDirectoryCopyFilter) then) =
-      __$$IgnorePathsDirectoryCopyFilterCopyWithImpl<$Res>;
+abstract class _$$IgnorePathsDirectoryFilterCopyWith<$Res> {
+  factory _$$IgnorePathsDirectoryFilterCopyWith(
+          _$IgnorePathsDirectoryFilter value,
+          $Res Function(_$IgnorePathsDirectoryFilter) then) =
+      __$$IgnorePathsDirectoryFilterCopyWithImpl<$Res>;
   @useResult
   $Res call({List<RegExp> paths});
 }
 
 /// @nodoc
-class __$$IgnorePathsDirectoryCopyFilterCopyWithImpl<$Res>
-    extends _$DirectoryCopyFilterCopyWithImpl<$Res,
-        _$IgnorePathsDirectoryCopyFilter>
-    implements _$$IgnorePathsDirectoryCopyFilterCopyWith<$Res> {
-  __$$IgnorePathsDirectoryCopyFilterCopyWithImpl(
-      _$IgnorePathsDirectoryCopyFilter _value,
-      $Res Function(_$IgnorePathsDirectoryCopyFilter) _then)
+class __$$IgnorePathsDirectoryFilterCopyWithImpl<$Res>
+    extends _$DirectoryFilterCopyWithImpl<$Res, _$IgnorePathsDirectoryFilter>
+    implements _$$IgnorePathsDirectoryFilterCopyWith<$Res> {
+  __$$IgnorePathsDirectoryFilterCopyWithImpl(
+      _$IgnorePathsDirectoryFilter _value,
+      $Res Function(_$IgnorePathsDirectoryFilter) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,7 +128,7 @@ class __$$IgnorePathsDirectoryCopyFilterCopyWithImpl<$Res>
   $Res call({
     Object? paths = null,
   }) {
-    return _then(_$IgnorePathsDirectoryCopyFilter(
+    return _then(_$IgnorePathsDirectoryFilter(
       paths: null == paths
           ? _value._paths
           : paths // ignore: cast_nullable_to_non_nullable
@@ -140,9 +139,8 @@ class __$$IgnorePathsDirectoryCopyFilterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$IgnorePathsDirectoryCopyFilter
-    implements IgnorePathsDirectoryCopyFilter {
-  const _$IgnorePathsDirectoryCopyFilter({required final List<RegExp> paths})
+class _$IgnorePathsDirectoryFilter implements IgnorePathsDirectoryFilter {
+  const _$IgnorePathsDirectoryFilter({required final List<RegExp> paths})
       : _paths = paths;
 
   final List<RegExp> _paths;
@@ -155,14 +153,14 @@ class _$IgnorePathsDirectoryCopyFilter
 
   @override
   String toString() {
-    return 'DirectoryCopyFilter.ignorePaths(paths: $paths)';
+    return 'DirectoryFilter.ignorePaths(paths: $paths)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$IgnorePathsDirectoryCopyFilter &&
+            other is _$IgnorePathsDirectoryFilter &&
             const DeepCollectionEquality().equals(other._paths, _paths));
   }
 
@@ -173,9 +171,9 @@ class _$IgnorePathsDirectoryCopyFilter
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IgnorePathsDirectoryCopyFilterCopyWith<_$IgnorePathsDirectoryCopyFilter>
-      get copyWith => __$$IgnorePathsDirectoryCopyFilterCopyWithImpl<
-          _$IgnorePathsDirectoryCopyFilter>(this, _$identity);
+  _$$IgnorePathsDirectoryFilterCopyWith<_$IgnorePathsDirectoryFilter>
+      get copyWith => __$$IgnorePathsDirectoryFilterCopyWithImpl<
+          _$IgnorePathsDirectoryFilter>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -226,12 +224,12 @@ class _$IgnorePathsDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(IgnorePathsDirectoryCopyFilter value) ignorePaths,
-    required TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)
+    required TResult Function(IgnorePathsDirectoryFilter value) ignorePaths,
+    required TResult Function(ReplaceInFolderNamesDirectoryFilter value)
         replaceInFolderNames,
-    required TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileNamesDirectoryFilter value)
         replaceInFileNames,
-    required TResult Function(ReplaceInFileContentDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileContentDirectoryFilter value)
         replaceInFileContent,
   }) {
     return ignorePaths(this);
@@ -240,12 +238,12 @@ class _$IgnorePathsDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult? Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult? Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult? Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult? Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult? Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
   }) {
     return ignorePaths?.call(this);
@@ -254,12 +252,12 @@ class _$IgnorePathsDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
     required TResult orElse(),
   }) {
@@ -270,34 +268,34 @@ class _$IgnorePathsDirectoryCopyFilter
   }
 }
 
-abstract class IgnorePathsDirectoryCopyFilter implements DirectoryCopyFilter {
-  const factory IgnorePathsDirectoryCopyFilter(
-      {required final List<RegExp> paths}) = _$IgnorePathsDirectoryCopyFilter;
+abstract class IgnorePathsDirectoryFilter implements DirectoryFilter {
+  const factory IgnorePathsDirectoryFilter(
+      {required final List<RegExp> paths}) = _$IgnorePathsDirectoryFilter;
 
   List<RegExp> get paths;
   @JsonKey(ignore: true)
-  _$$IgnorePathsDirectoryCopyFilterCopyWith<_$IgnorePathsDirectoryCopyFilter>
+  _$$IgnorePathsDirectoryFilterCopyWith<_$IgnorePathsDirectoryFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReplaceInFolderNamesDirectoryCopyFilterCopyWith<$Res> {
-  factory _$$ReplaceInFolderNamesDirectoryCopyFilterCopyWith(
-          _$ReplaceInFolderNamesDirectoryCopyFilter value,
-          $Res Function(_$ReplaceInFolderNamesDirectoryCopyFilter) then) =
-      __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl<$Res>;
+abstract class _$$ReplaceInFolderNamesDirectoryFilterCopyWith<$Res> {
+  factory _$$ReplaceInFolderNamesDirectoryFilterCopyWith(
+          _$ReplaceInFolderNamesDirectoryFilter value,
+          $Res Function(_$ReplaceInFolderNamesDirectoryFilter) then) =
+      __$$ReplaceInFolderNamesDirectoryFilterCopyWithImpl<$Res>;
   @useResult
   $Res call({List<RegExp> ignore, Pattern from, String replace});
 }
 
 /// @nodoc
-class __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl<$Res>
-    extends _$DirectoryCopyFilterCopyWithImpl<$Res,
-        _$ReplaceInFolderNamesDirectoryCopyFilter>
-    implements _$$ReplaceInFolderNamesDirectoryCopyFilterCopyWith<$Res> {
-  __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl(
-      _$ReplaceInFolderNamesDirectoryCopyFilter _value,
-      $Res Function(_$ReplaceInFolderNamesDirectoryCopyFilter) _then)
+class __$$ReplaceInFolderNamesDirectoryFilterCopyWithImpl<$Res>
+    extends _$DirectoryFilterCopyWithImpl<$Res,
+        _$ReplaceInFolderNamesDirectoryFilter>
+    implements _$$ReplaceInFolderNamesDirectoryFilterCopyWith<$Res> {
+  __$$ReplaceInFolderNamesDirectoryFilterCopyWithImpl(
+      _$ReplaceInFolderNamesDirectoryFilter _value,
+      $Res Function(_$ReplaceInFolderNamesDirectoryFilter) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -307,7 +305,7 @@ class __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl<$Res>
     Object? from = null,
     Object? replace = null,
   }) {
-    return _then(_$ReplaceInFolderNamesDirectoryCopyFilter(
+    return _then(_$ReplaceInFolderNamesDirectoryFilter(
       ignore: null == ignore
           ? _value._ignore
           : ignore // ignore: cast_nullable_to_non_nullable
@@ -326,9 +324,9 @@ class __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReplaceInFolderNamesDirectoryCopyFilter
-    implements ReplaceInFolderNamesDirectoryCopyFilter {
-  const _$ReplaceInFolderNamesDirectoryCopyFilter(
+class _$ReplaceInFolderNamesDirectoryFilter
+    implements ReplaceInFolderNamesDirectoryFilter {
+  const _$ReplaceInFolderNamesDirectoryFilter(
       {final List<RegExp> ignore = const [],
       required this.from,
       required this.replace})
@@ -350,14 +348,14 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
 
   @override
   String toString() {
-    return 'DirectoryCopyFilter.replaceInFolderNames(ignore: $ignore, from: $from, replace: $replace)';
+    return 'DirectoryFilter.replaceInFolderNames(ignore: $ignore, from: $from, replace: $replace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReplaceInFolderNamesDirectoryCopyFilter &&
+            other is _$ReplaceInFolderNamesDirectoryFilter &&
             const DeepCollectionEquality().equals(other._ignore, _ignore) &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.replace, replace) || other.replace == replace));
@@ -370,10 +368,10 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReplaceInFolderNamesDirectoryCopyFilterCopyWith<
-          _$ReplaceInFolderNamesDirectoryCopyFilter>
-      get copyWith => __$$ReplaceInFolderNamesDirectoryCopyFilterCopyWithImpl<
-          _$ReplaceInFolderNamesDirectoryCopyFilter>(this, _$identity);
+  _$$ReplaceInFolderNamesDirectoryFilterCopyWith<
+          _$ReplaceInFolderNamesDirectoryFilter>
+      get copyWith => __$$ReplaceInFolderNamesDirectoryFilterCopyWithImpl<
+          _$ReplaceInFolderNamesDirectoryFilter>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -424,12 +422,12 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(IgnorePathsDirectoryCopyFilter value) ignorePaths,
-    required TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)
+    required TResult Function(IgnorePathsDirectoryFilter value) ignorePaths,
+    required TResult Function(ReplaceInFolderNamesDirectoryFilter value)
         replaceInFolderNames,
-    required TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileNamesDirectoryFilter value)
         replaceInFileNames,
-    required TResult Function(ReplaceInFileContentDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileContentDirectoryFilter value)
         replaceInFileContent,
   }) {
     return replaceInFolderNames(this);
@@ -438,12 +436,12 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult? Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult? Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult? Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult? Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult? Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
   }) {
     return replaceInFolderNames?.call(this);
@@ -452,12 +450,12 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
     required TResult orElse(),
   }) {
@@ -468,41 +466,39 @@ class _$ReplaceInFolderNamesDirectoryCopyFilter
   }
 }
 
-abstract class ReplaceInFolderNamesDirectoryCopyFilter
-    implements DirectoryCopyFilter {
-  const factory ReplaceInFolderNamesDirectoryCopyFilter(
-          {final List<RegExp> ignore,
-          required final Pattern from,
-          required final String replace}) =
-      _$ReplaceInFolderNamesDirectoryCopyFilter;
+abstract class ReplaceInFolderNamesDirectoryFilter implements DirectoryFilter {
+  const factory ReplaceInFolderNamesDirectoryFilter(
+      {final List<RegExp> ignore,
+      required final Pattern from,
+      required final String replace}) = _$ReplaceInFolderNamesDirectoryFilter;
 
   List<RegExp> get ignore;
   Pattern get from;
   String get replace;
   @JsonKey(ignore: true)
-  _$$ReplaceInFolderNamesDirectoryCopyFilterCopyWith<
-          _$ReplaceInFolderNamesDirectoryCopyFilter>
+  _$$ReplaceInFolderNamesDirectoryFilterCopyWith<
+          _$ReplaceInFolderNamesDirectoryFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReplaceInFileNamesDirectoryCopyFilterCopyWith<$Res> {
-  factory _$$ReplaceInFileNamesDirectoryCopyFilterCopyWith(
-          _$ReplaceInFileNamesDirectoryCopyFilter value,
-          $Res Function(_$ReplaceInFileNamesDirectoryCopyFilter) then) =
-      __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl<$Res>;
+abstract class _$$ReplaceInFileNamesDirectoryFilterCopyWith<$Res> {
+  factory _$$ReplaceInFileNamesDirectoryFilterCopyWith(
+          _$ReplaceInFileNamesDirectoryFilter value,
+          $Res Function(_$ReplaceInFileNamesDirectoryFilter) then) =
+      __$$ReplaceInFileNamesDirectoryFilterCopyWithImpl<$Res>;
   @useResult
   $Res call({List<RegExp> ignore, Pattern from, String replace});
 }
 
 /// @nodoc
-class __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl<$Res>
-    extends _$DirectoryCopyFilterCopyWithImpl<$Res,
-        _$ReplaceInFileNamesDirectoryCopyFilter>
-    implements _$$ReplaceInFileNamesDirectoryCopyFilterCopyWith<$Res> {
-  __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl(
-      _$ReplaceInFileNamesDirectoryCopyFilter _value,
-      $Res Function(_$ReplaceInFileNamesDirectoryCopyFilter) _then)
+class __$$ReplaceInFileNamesDirectoryFilterCopyWithImpl<$Res>
+    extends _$DirectoryFilterCopyWithImpl<$Res,
+        _$ReplaceInFileNamesDirectoryFilter>
+    implements _$$ReplaceInFileNamesDirectoryFilterCopyWith<$Res> {
+  __$$ReplaceInFileNamesDirectoryFilterCopyWithImpl(
+      _$ReplaceInFileNamesDirectoryFilter _value,
+      $Res Function(_$ReplaceInFileNamesDirectoryFilter) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -512,7 +508,7 @@ class __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl<$Res>
     Object? from = null,
     Object? replace = null,
   }) {
-    return _then(_$ReplaceInFileNamesDirectoryCopyFilter(
+    return _then(_$ReplaceInFileNamesDirectoryFilter(
       ignore: null == ignore
           ? _value._ignore
           : ignore // ignore: cast_nullable_to_non_nullable
@@ -531,9 +527,9 @@ class __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReplaceInFileNamesDirectoryCopyFilter
-    implements ReplaceInFileNamesDirectoryCopyFilter {
-  const _$ReplaceInFileNamesDirectoryCopyFilter(
+class _$ReplaceInFileNamesDirectoryFilter
+    implements ReplaceInFileNamesDirectoryFilter {
+  const _$ReplaceInFileNamesDirectoryFilter(
       {final List<RegExp> ignore = const [],
       required this.from,
       required this.replace})
@@ -555,14 +551,14 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
 
   @override
   String toString() {
-    return 'DirectoryCopyFilter.replaceInFileNames(ignore: $ignore, from: $from, replace: $replace)';
+    return 'DirectoryFilter.replaceInFileNames(ignore: $ignore, from: $from, replace: $replace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReplaceInFileNamesDirectoryCopyFilter &&
+            other is _$ReplaceInFileNamesDirectoryFilter &&
             const DeepCollectionEquality().equals(other._ignore, _ignore) &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.replace, replace) || other.replace == replace));
@@ -575,10 +571,10 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReplaceInFileNamesDirectoryCopyFilterCopyWith<
-          _$ReplaceInFileNamesDirectoryCopyFilter>
-      get copyWith => __$$ReplaceInFileNamesDirectoryCopyFilterCopyWithImpl<
-          _$ReplaceInFileNamesDirectoryCopyFilter>(this, _$identity);
+  _$$ReplaceInFileNamesDirectoryFilterCopyWith<
+          _$ReplaceInFileNamesDirectoryFilter>
+      get copyWith => __$$ReplaceInFileNamesDirectoryFilterCopyWithImpl<
+          _$ReplaceInFileNamesDirectoryFilter>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -629,12 +625,12 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(IgnorePathsDirectoryCopyFilter value) ignorePaths,
-    required TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)
+    required TResult Function(IgnorePathsDirectoryFilter value) ignorePaths,
+    required TResult Function(ReplaceInFolderNamesDirectoryFilter value)
         replaceInFolderNames,
-    required TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileNamesDirectoryFilter value)
         replaceInFileNames,
-    required TResult Function(ReplaceInFileContentDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileContentDirectoryFilter value)
         replaceInFileContent,
   }) {
     return replaceInFileNames(this);
@@ -643,12 +639,12 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult? Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult? Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult? Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult? Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult? Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
   }) {
     return replaceInFileNames?.call(this);
@@ -657,12 +653,12 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
     required TResult orElse(),
   }) {
@@ -673,40 +669,39 @@ class _$ReplaceInFileNamesDirectoryCopyFilter
   }
 }
 
-abstract class ReplaceInFileNamesDirectoryCopyFilter
-    implements DirectoryCopyFilter {
-  const factory ReplaceInFileNamesDirectoryCopyFilter(
+abstract class ReplaceInFileNamesDirectoryFilter implements DirectoryFilter {
+  const factory ReplaceInFileNamesDirectoryFilter(
       {final List<RegExp> ignore,
       required final Pattern from,
-      required final String replace}) = _$ReplaceInFileNamesDirectoryCopyFilter;
+      required final String replace}) = _$ReplaceInFileNamesDirectoryFilter;
 
   List<RegExp> get ignore;
   Pattern get from;
   String get replace;
   @JsonKey(ignore: true)
-  _$$ReplaceInFileNamesDirectoryCopyFilterCopyWith<
-          _$ReplaceInFileNamesDirectoryCopyFilter>
+  _$$ReplaceInFileNamesDirectoryFilterCopyWith<
+          _$ReplaceInFileNamesDirectoryFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReplaceInFileContentDirectoryCopyFilterCopyWith<$Res> {
-  factory _$$ReplaceInFileContentDirectoryCopyFilterCopyWith(
-          _$ReplaceInFileContentDirectoryCopyFilter value,
-          $Res Function(_$ReplaceInFileContentDirectoryCopyFilter) then) =
-      __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl<$Res>;
+abstract class _$$ReplaceInFileContentDirectoryFilterCopyWith<$Res> {
+  factory _$$ReplaceInFileContentDirectoryFilterCopyWith(
+          _$ReplaceInFileContentDirectoryFilter value,
+          $Res Function(_$ReplaceInFileContentDirectoryFilter) then) =
+      __$$ReplaceInFileContentDirectoryFilterCopyWithImpl<$Res>;
   @useResult
   $Res call({List<RegExp> ignore, Pattern from, String replace});
 }
 
 /// @nodoc
-class __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl<$Res>
-    extends _$DirectoryCopyFilterCopyWithImpl<$Res,
-        _$ReplaceInFileContentDirectoryCopyFilter>
-    implements _$$ReplaceInFileContentDirectoryCopyFilterCopyWith<$Res> {
-  __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl(
-      _$ReplaceInFileContentDirectoryCopyFilter _value,
-      $Res Function(_$ReplaceInFileContentDirectoryCopyFilter) _then)
+class __$$ReplaceInFileContentDirectoryFilterCopyWithImpl<$Res>
+    extends _$DirectoryFilterCopyWithImpl<$Res,
+        _$ReplaceInFileContentDirectoryFilter>
+    implements _$$ReplaceInFileContentDirectoryFilterCopyWith<$Res> {
+  __$$ReplaceInFileContentDirectoryFilterCopyWithImpl(
+      _$ReplaceInFileContentDirectoryFilter _value,
+      $Res Function(_$ReplaceInFileContentDirectoryFilter) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -716,7 +711,7 @@ class __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl<$Res>
     Object? from = null,
     Object? replace = null,
   }) {
-    return _then(_$ReplaceInFileContentDirectoryCopyFilter(
+    return _then(_$ReplaceInFileContentDirectoryFilter(
       ignore: null == ignore
           ? _value._ignore
           : ignore // ignore: cast_nullable_to_non_nullable
@@ -735,9 +730,9 @@ class __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReplaceInFileContentDirectoryCopyFilter
-    implements ReplaceInFileContentDirectoryCopyFilter {
-  const _$ReplaceInFileContentDirectoryCopyFilter(
+class _$ReplaceInFileContentDirectoryFilter
+    implements ReplaceInFileContentDirectoryFilter {
+  const _$ReplaceInFileContentDirectoryFilter(
       {final List<RegExp> ignore = const [],
       required this.from,
       required this.replace})
@@ -759,14 +754,14 @@ class _$ReplaceInFileContentDirectoryCopyFilter
 
   @override
   String toString() {
-    return 'DirectoryCopyFilter.replaceInFileContent(ignore: $ignore, from: $from, replace: $replace)';
+    return 'DirectoryFilter.replaceInFileContent(ignore: $ignore, from: $from, replace: $replace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReplaceInFileContentDirectoryCopyFilter &&
+            other is _$ReplaceInFileContentDirectoryFilter &&
             const DeepCollectionEquality().equals(other._ignore, _ignore) &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.replace, replace) || other.replace == replace));
@@ -779,10 +774,10 @@ class _$ReplaceInFileContentDirectoryCopyFilter
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReplaceInFileContentDirectoryCopyFilterCopyWith<
-          _$ReplaceInFileContentDirectoryCopyFilter>
-      get copyWith => __$$ReplaceInFileContentDirectoryCopyFilterCopyWithImpl<
-          _$ReplaceInFileContentDirectoryCopyFilter>(this, _$identity);
+  _$$ReplaceInFileContentDirectoryFilterCopyWith<
+          _$ReplaceInFileContentDirectoryFilter>
+      get copyWith => __$$ReplaceInFileContentDirectoryFilterCopyWithImpl<
+          _$ReplaceInFileContentDirectoryFilter>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -833,12 +828,12 @@ class _$ReplaceInFileContentDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(IgnorePathsDirectoryCopyFilter value) ignorePaths,
-    required TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)
+    required TResult Function(IgnorePathsDirectoryFilter value) ignorePaths,
+    required TResult Function(ReplaceInFolderNamesDirectoryFilter value)
         replaceInFolderNames,
-    required TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileNamesDirectoryFilter value)
         replaceInFileNames,
-    required TResult Function(ReplaceInFileContentDirectoryCopyFilter value)
+    required TResult Function(ReplaceInFileContentDirectoryFilter value)
         replaceInFileContent,
   }) {
     return replaceInFileContent(this);
@@ -847,12 +842,12 @@ class _$ReplaceInFileContentDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult? Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult? Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult? Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult? Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult? Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult? Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
   }) {
     return replaceInFileContent?.call(this);
@@ -861,12 +856,12 @@ class _$ReplaceInFileContentDirectoryCopyFilter
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(IgnorePathsDirectoryCopyFilter value)? ignorePaths,
-    TResult Function(ReplaceInFolderNamesDirectoryCopyFilter value)?
+    TResult Function(IgnorePathsDirectoryFilter value)? ignorePaths,
+    TResult Function(ReplaceInFolderNamesDirectoryFilter value)?
         replaceInFolderNames,
-    TResult Function(ReplaceInFileNamesDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileNamesDirectoryFilter value)?
         replaceInFileNames,
-    TResult Function(ReplaceInFileContentDirectoryCopyFilter value)?
+    TResult Function(ReplaceInFileContentDirectoryFilter value)?
         replaceInFileContent,
     required TResult orElse(),
   }) {
@@ -877,19 +872,17 @@ class _$ReplaceInFileContentDirectoryCopyFilter
   }
 }
 
-abstract class ReplaceInFileContentDirectoryCopyFilter
-    implements DirectoryCopyFilter {
-  const factory ReplaceInFileContentDirectoryCopyFilter(
-          {final List<RegExp> ignore,
-          required final Pattern from,
-          required final String replace}) =
-      _$ReplaceInFileContentDirectoryCopyFilter;
+abstract class ReplaceInFileContentDirectoryFilter implements DirectoryFilter {
+  const factory ReplaceInFileContentDirectoryFilter(
+      {final List<RegExp> ignore,
+      required final Pattern from,
+      required final String replace}) = _$ReplaceInFileContentDirectoryFilter;
 
   List<RegExp> get ignore;
   Pattern get from;
   String get replace;
   @JsonKey(ignore: true)
-  _$$ReplaceInFileContentDirectoryCopyFilterCopyWith<
-          _$ReplaceInFileContentDirectoryCopyFilter>
+  _$$ReplaceInFileContentDirectoryFilterCopyWith<
+          _$ReplaceInFileContentDirectoryFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
