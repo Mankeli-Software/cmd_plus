@@ -292,12 +292,13 @@ class CmdPlus {
               (r) => r.hasMatch(relativePath),
             ),
           );
-
+          final target = File(filteredPath);
+          final newRelativePath = target.relativePath(directory);
           copyFile(
             from: originalFile,
-            to: File(filteredPath),
-            deleteTo: originalFile.absolute.path != filteredPath,
-            deleteFrom: originalFile.absolute.path != filteredPath,
+            to: target,
+            deleteTo: relativePath != newRelativePath,
+            deleteFrom: relativePath != newRelativePath,
             filters: contentFilters
                 .map(
                   (f) => FileFilter.replaceInFileContent(
