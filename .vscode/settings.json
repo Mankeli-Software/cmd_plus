@@ -1,0 +1,36 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "$(capture).gen.dart, $(capture).g.dart, $(capture).gr.dart, $(capture).freezed.dart",
+    "pubspec.yaml": "*.lock, *.yaml, *.yml, .metadata, .flutter-plugins, .flutter-plugins-dependencies, example.iml",
+    "README.md": "LICENSE, *.md"
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[yaml]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.flutter-plugins**": true,
+    "**/.metadata": true,
+    "**/pubspec.lock": true
+  },
+  "dart.flutterCreateOrganization": "co.mankeli",
+  "dart.flutterGenerateLocalizationsOnSave": "all",
+  "dart.runPubGetOnNestedProjects": "both"
+}
