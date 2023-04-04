@@ -1,3 +1,6 @@
+# 1.3.2
+- Minor updates to the maintainability of the codebase
+
 # 1.3.1
 - __BREAKING CHANGE__:Renames `DirectoryCopyFilter` to `DirectoryFilter` and `FileCopyFilter` to `FileFilter`
 - Creates new method, `filterDirectory()`, for applying the same great filtering logic to in-place-edits (no need to create tmp directories etc.)
