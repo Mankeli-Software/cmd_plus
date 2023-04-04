@@ -1,7 +1,7 @@
 name: cmd_plus
 description: A wrapper around dart:io Process, package:io and mason_logger to
   make it easier to run commands in dart scripts.
-version: 1.3.1
+version: 1.3.2
 homepage: https://mankeli.co
 repository: https://github.com/Mankeli-Software/cmd_plus
 issue_tracker: https://github.com/Mankeli-Software/cmd_plus/issues
