@@ -20,19 +20,53 @@
     "prefix": "freezed_class",
     "body": [
       "@freezed",
-      "class ${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}  with _$${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}} {",
-      "    const ${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}({",
+      "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}  with _$${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} {",
+      "    const factory ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({",
       "      ${2:String name,}",
-      "    }) = _${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}};",
+      "    }) = _${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}};",
       "}"
     ],
     "description": "Freezed class"
+  },
+  "freezed_from_json": {
+    "scope": "dart",
+    "prefix": "freezed_from_json",
+    "body": [
+      "  factory ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}.fromJson(Map<String, dynamic> json) => _\\$${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}FromJson(json);",
+    ],
+    "description": "Freezed class fromJson"
+  },
+  "gen_part": {
+    "scope": "dart",
+    "prefix": "gen_part",
+    "body": [
+      "part '$TM_FILENAME_BASE.gen.dart'",
+    ],
+    "description": ".gen.dart suffix part of import"
+  },
+  "g_part": {
+    "scope": "dart",
+    "prefix": "g_part",
+    "body": [
+      "part '$TM_FILENAME_BASE.g.dart'",
+    ],
+    "description": ".g.dart suffix part of import"
+  },
+  "gr_part": {
+    "scope": "dart",
+    "prefix": "gr_part",
+    "body": [
+      "part '$TM_FILENAME_BASE.gr.dart'",
+    ],
+    "description": ".gr.dart suffix part of import"
   },
   "stateless_widget": {
     "scope": "dart",
     "prefix": "stateless_widget",
     "body": [
-      "class ${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}} extends StatelessWidget {",
+      "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends StatelessWidget {",
+      "  const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({super.key});",
+      "",
       "  @override",
       "  Widget build(BuildContext context) {",
       "    return ${2:Container()};",
@@ -45,18 +79,28 @@
     "scope": "dart",
     "prefix": "stateful_widget",
     "body": [
-      "class ${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}} extends StatefulWidget {",
-      "  const ${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}({super.key});",
+      "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends StatefulWidget {",
+      "  const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({super.key});",
       "",
       "  @override",
-      "  State<${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}> createState() => _${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}State();",
+      "  State<${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}> createState() => _${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}State();",
       "}",
       "",
-      "class _${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}State extends State<${1:${TM_FILENAME_BASE/(^|_)([a-z])/${2:/upcase}/g}}> {",
+      "class _${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}State extends State<${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}> {",
       "  @override",
       "  Widget build(BuildContext context) {",
       "    return ${2:Container()};",
       "  }",
+      "}"
+    ],
+    "description": "Stateful widget"
+  },
+  "extension": {
+    "scope": "dart",
+    "prefix": "extension",
+    "body": [
+      "extension ${1:${TM_FILENAME_BASE/(.*)(_extension)/${1:/pascalcase}/g}}Extension on ${1:${TM_FILENAME_BASE/(.*)(_extension)/${1:/pascalcase}/g}} {",
+      "",
       "}"
     ],
     "description": "Stateful widget"
