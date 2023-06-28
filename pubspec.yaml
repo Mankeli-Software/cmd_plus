@@ -7,7 +7,7 @@ repository: https://github.com/Mankeli-Software/cmd_plus
 issue_tracker: https://github.com/Mankeli-Software/cmd_plus/issues
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=3.0.5 <4.0.0'
 
 dependencies:
   freezed: ^2.3.2
